@@ -77,6 +77,8 @@ function updateBoardView(){
             else{
                 the_number_cell.css('width',cellSlideLength );
                 the_number_cell.css('height',cellSlideLength );
+                the_number_cell.css('border-radius',0.02 * gridContainerWidth);
+
                 the_number_cell.css('top',getPosTop(i,j)) ;
                 the_number_cell.css('left',getPosLeft(i,j));
                 the_number_cell.css('background-color',getNumberBackGroundColor(board[i][j]));
@@ -182,6 +184,8 @@ $(document).keydown(function(event){
 });
 
 document.addEventListener('touchstart',function(event){
+    event.preventDefault();
+
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
 });
@@ -189,6 +193,8 @@ document.addEventListener('touchmove',function(event){//prevent Android bug
     event.preventDefault();
 });
 document.addEventListener('touchend',function(event){
+    event.preventDefault();
+
     endx = event.changedTouches[0].pageX;
     endy = event.changedTouches[0].pageY;
 
