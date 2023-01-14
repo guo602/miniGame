@@ -186,7 +186,7 @@ $(document).keydown(function(event){
 });
 
 document.addEventListener('touchstart',function(event){
-    event.preventDefault();
+    // event.preventDefault();
 
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
@@ -198,7 +198,7 @@ document.addEventListener('touchmove',function(event){//prevent Android bug
 //     e.preventDefault();//阻止默认的处理方式(阻止下拉滑动的效果)
 // });//passive 参数不能省略，用来兼容ios和android
 document.addEventListener('touchend',function(event){
-    event.preventDefault();
+    // event.preventDefault();
 
     endx = event.changedTouches[0].pageX;
     endy = event.changedTouches[0].pageY;
