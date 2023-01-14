@@ -113,7 +113,7 @@ function generateOneNum(){
                 times++;
 
         }
-        if(times=40){
+        if(times==40){
             for(var i=0;i<4;i++)
                 for(var j=0;j<4;j++){
                     if(board[i][j]==0){
@@ -194,9 +194,9 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchmove',function(event){//prevent Android bug
     event.preventDefault();
 });
-document.body.addEventListener('touchmove', function(e) {
-    e.preventDefault();//阻止默认的处理方式(阻止下拉滑动的效果)
-});//passive 参数不能省略，用来兼容ios和android
+// document.body.addEventListener('touchmove', function(e) {
+//     e.preventDefault();//阻止默认的处理方式(阻止下拉滑动的效果)
+// });//passive 参数不能省略，用来兼容ios和android
 document.addEventListener('touchend',function(event){
     event.preventDefault();
 
