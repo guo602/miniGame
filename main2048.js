@@ -77,7 +77,7 @@ function updateBoardView(){
             else{
                 the_number_cell.css('width',cellSlideLength );
                 the_number_cell.css('height',cellSlideLength );
-                the_number_cell.css('border-radius',0.02 * gridContainerWidth);
+                the_number_cell.css('border-radius',0.02 * cellSlideLength);
 
                 the_number_cell.css('top',getPosTop(i,j)) ;
                 the_number_cell.css('left',getPosLeft(i,j));
@@ -192,6 +192,12 @@ document.addEventListener('touchstart',function(event){
 document.addEventListener('touchmove',function(event){//prevent Android bug
     event.preventDefault();
 });
+document.body.addEventListener('touchmove', function(e) {
+    if (e._isScroller) return;
+    e.preventDefault();//阻止默认的处理方式(阻止下拉滑动的效果)
+}, {
+    passive: false  
+});//passive 参数不能省略，用来兼容ios和android
 document.addEventListener('touchend',function(event){
     event.preventDefault();
 
