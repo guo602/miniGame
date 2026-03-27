@@ -34,6 +34,8 @@ function prepareForMobile(){
 }
 
 function newgame(){
+    score = 0;
+    updateScore(score);
     //init grid
     init();
     //generate 2 digit in the grid randomly 
